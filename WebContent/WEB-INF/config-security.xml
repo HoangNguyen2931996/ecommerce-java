@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+xmlns:beans="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http use-expressions="true">
+		<csrf disabled="true"/>
+
+		<intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_Mod', 'ROLE_Admin')" />
+		<intercept-url pattern="/checkout/**" access="isAuthenticated()" />
+        <intercept-url pattern="/**" access="permitAll()" />
+        <access-denied-handler error-page="/403" />
+        <form-login login-page='/login' login-processing-url="/login"
+            default-target-url="/" always-use-default-target="false"
+            authentication-failure-url="/login?error=loginErr" username-parameter="username"
+            password-parameter="password" />
+        <logout logout-url="/logout" logout-success-url="/"
+            delete-cookies="JSESSIONID" invalidate-session="true" />
+    </http>
+    <authentication-manager>
+        <!-- authentication from database -->
+        <authentication-provider>
+           	<password-encoder hash="md5" /> 
+            <jdbc-user-service data-source-ref="myDataSource"
+                users-by-username-query="select username, password, active from user where username=?"
+                authorities-by-username-query="select username, concat('ROLE_', role) role from user where username=?" />
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>

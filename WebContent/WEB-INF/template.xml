@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+  <!-- admin template -->
+  <definition name="ecommerce.admin.template" template="/WEB-INF/templates/admin/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/templates/admin/header.jsp" />
+    <put-attribute name="left_bar" value="/WEB-INF/templates/admin/left_bar.jsp" />
+    <put-attribute name="right_bar" value="/WEB-INF/templates/admin/right_bar.jsp" />
+    <put-attribute name="content" value="" />
+    <put-attribute name="footer" value="/WEB-INF/templates/admin/footer.jsp" />
+  </definition>
+  <definition name="admin.cat.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/cat/index.jsp" />
+  </definition>
+  <definition name="admin.cat.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/cat/add.jsp" />
+  </definition>
+  <definition name="admin.cat.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/cat/edit.jsp" />
+  </definition>
+  <definition name="admin.brand.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/brand/index.jsp" />
+  </definition>
+  <definition name="admin.brand.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/brand/add.jsp" />
+  </definition>
+  <definition name="admin.brand.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/brand/edit.jsp" />
+  </definition>
+  <definition name="admin.product.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/product/index.jsp" />
+  </definition>
+  <definition name="admin.product.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/product/add.jsp" />
+  </definition>
+  <definition name="admin.product.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/product/edit.jsp" />
+  </definition>
+  <definition name="admin.product.picture" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/product/indexPicture.jsp" />
+  </definition>
+  <definition name="admin.product.picture.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/product/pictureAdd.jsp" />
+  </definition>
+  <definition name="admin.product.picture.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/product/pictureEdit.jsp" />
+  </definition>
+  <definition name="admin.user.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/user/index.jsp" />
+  </definition>
+  <definition name="admin.user.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/user/add.jsp" />
+  </definition>
+  <definition name="admin.user.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/user/edit.jsp" />
+  </definition>
+  <definition name="admin.picture.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/picture/index.jsp" />
+  </definition>
+  <definition name="admin.picture.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/picture/add.jsp" />
+  </definition>
+  <definition name="admin.picture.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/picture/edit.jsp" />
+  </definition>
+  <definition name="admin.picture.search" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/picture/search.jsp" />
+  </definition>
+  <definition name="admin.order.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/order/index.jsp" />
+  </definition>
+  <definition name="admin.order.search" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/order/search.jsp" />
+  </definition>
+  <definition name="admin.order.view" extends="ecommerce.admin.template">
+  	<put-attribute name="header" value="" />
+    <put-attribute name="left_bar" value="" />
+    <put-attribute name="right_bar" value="" />
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/order/view.jsp" />
+    <put-attribute name="footer" value="" />
+  </definition>
+  <definition name="public.order.view" extends="ecommerce.admin.template">
+  	<put-attribute name="header" value="" />
+    <put-attribute name="left_bar" value="" />
+    <put-attribute name="right_bar" value="" />
+    <put-attribute name="content" value="/WEB-INF/jsp/public/view.jsp" />
+    <put-attribute name="footer" value="" />
+  </definition>
+  <definition name="admin.slide.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/slide/index.jsp" />
+  </definition>
+  <definition name="admin.slide.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/slide/add.jsp" />
+  </definition>
+  <definition name="admin.slide.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/slide/edit.jsp" />
+  </definition>
+  <definition name="admin.index.search" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/product/search.jsp" />
+  </definition>
+  <definition name="admin.contact.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/contact/index.jsp" />
+  </definition>
+  <definition name="admin.contact.view" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/contact/view.jsp" />
+  </definition>
+  <definition name="admin.contact.answer" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/contact/answer.jsp" />
+  </definition>
+  <definition name="admin.review.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/review/index.jsp" />
+  </definition>
+  <definition name="admin.review.view" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/review/view.jsp" />
+  </definition>
+  <definition name="admin.dashboard.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/dashboard/index.jsp" />
+  </definition>
+  <definition name="admin.payment.index" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/payment/index.jsp" />
+  </definition>
+  <definition name="admin.payment.add" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/payment/add.jsp" />
+  </definition>
+  <definition name="admin.payment.edit" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin/payment/edit.jsp" />
+  </definition>
+  <definition name="public.index.editUser" extends="ecommerce.admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/edit.jsp" />
+  </definition>
+  <!-- public template -->
+  <definition name="ecommerce.public.template" template="/WEB-INF/templates/public/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/templates/public/header.jsp" />
+    <put-attribute name="content" value="" />
+    <put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+  </definition>
+  <definition name="public.index.index" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/index.jsp" />
+  </definition>
+  <definition name="public.index.cat" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/cat.jsp" />
+  </definition>
+  <definition name="public.index.search" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/search.jsp" />
+  </definition>
+  <definition name="public.index.detail" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/detail.jsp" />
+  </definition>
+  <definition name="public.index.brand" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/brand.jsp" />
+  </definition>
+  <definition name="public.contact.index" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/contact.jsp" />
+  </definition>
+  <definition name="public.auth.login" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/login.jsp" />
+  </definition>
+  <definition name="public.index.cart" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/cart.jsp" />
+  </definition>
+  <definition name="public.checkout.index" extends="ecommerce.public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public/checkout.jsp" />
+  </definition>
+  
+  <definition name="public.checkout.invoice" extends="ecommerce.public.template">
+  	<put-attribute name="header" value="" />
+    <put-attribute name="content" value="/WEB-INF/jsp/public/invoice.jsp" />
+    <put-attribute name="footer" value="" />
+  </definition>
+  <definition name="auth.error403" extends="ecommerce.public.template">
+  	<put-attribute name="header" value="" />
+    <put-attribute name="content" value="/WEB-INF/jsp/public/403.jsp" />
+    <put-attribute name="footer" value="" />
+  </definition>
+  <definition name="public.error" extends="ecommerce.public.template">
+  	<put-attribute name="header" value="" />
+    <put-attribute name="content" value="/WEB-INF/jsp/public/error.jsp" />
+    <put-attribute name="footer" value="" />
+  </definition>
+</tiles-definitions>

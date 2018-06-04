@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<mvc:annotation-driven />
+    <context:component-scan base-package="controller"/>
+	<context:component-scan base-package="dao"/>
+	<context:component-scan base-package="net.codejava.spring" />
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="username" value="nguyenvanhoang2931996@gmail.com" />
+        <property name="password" value="vanhoang123" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- ... -->
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/template.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+	</bean>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="300000000"/>
+	</bean>
+	<bean id="deFine" class="constant.Defines">
+		<property name="URL_PUBLIC" value="/ecommerce/templates/public"></property>
+		<property name="URL_ADMIN" value="/ecommerce/templates/admin"></property>
+		<property name="ROW_COUNT_ADMIN" value="5"></property>
+		<property name="ROW_COUNT_PUBLIC" value="9"></property>
+		<property name="PAGE_NUM_PUBLIC" value="3"></property>
+		<property name="PAGE_NUM_ADMIN" value="5"></property>
+	</bean>
+	<bean id="stringUtils" class="utils.StringUtils">
+	</bean>
+	<bean id="slugUtils" class="utils.SlugUtils">
+	</bean>
+	<bean id="stripTagLibrary" class="utils.StripTagLibrary">
+	</bean>
+	<bean id="libraryFile" class="utils.LibraryFile">
+	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    	<property name="basename" value="messages"/>
+	</bean>
+	
+</beans>
